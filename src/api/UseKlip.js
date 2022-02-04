@@ -9,7 +9,8 @@ const getKlipAccessUrl = (method, request_key) => {
   if (method === 'QR') {
     return `https://klipwallet.com/?target=/a2a?request_key=${request_key}`;
   } 
-  return `kakaotalk://klipwallet/open?url=https://klipwallet.com/?target=/a2a?request_key=${request_key}`
+  // iOS Case : return `kakaotalk://klipwallet/open?url=https://klipwallet.com/?target=/a2a?request_key=${request_key}`
+  return `intent://klipwallet/open?url=https://klipwallet.com/?target=/a2a?request_key=${request_key}#Intent;scheme=kakaotalk;package=com.kakao.talk;end`
 }
 
 export const listingCard = async (

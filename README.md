@@ -7,6 +7,7 @@ This app is an NFT market app where you can buy and sell your photos.
 
 <p align="center"><img src="app_screen.png"></p>  
 
+[Test App Address](https://practical-feynman-0359f6.netlify.app/)
 
 # Getting Started with Create React App
 
