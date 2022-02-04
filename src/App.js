@@ -188,7 +188,7 @@ function App() {
                         setMintImgUri(e.target.value);
                         console.log(`[onChange] ${e.target.value}`)
                       }}
-                      type="test"
+                      type="text"
                       placeholder='이미지 주소를 입력하세요.'
                     />
                   </Form.Group>
