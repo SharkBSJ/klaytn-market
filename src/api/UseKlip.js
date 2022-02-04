@@ -9,8 +9,8 @@ const getKlipAccessUrl = (method, request_key) => {
   if (method === 'QR') {
     return `https://klipwallet.com/?target=/a2a?request_key=${request_key}`;
   } 
-  // iOS Case : return `kakaotalk://klipwallet/open?url=https://klipwallet.com/?target=/a2a?request_key=${request_key}`
-  return `intent://klipwallet/open?url=https://klipwallet.com/?target=/a2a?request_key=${request_key}#Intent;scheme=kakaotalk;package=com.kakao.talk;end`
+  return `kakaotalk://klipwallet/open?url=https://klipwallet.com/?target=/a2a?request_key=${request_key}`
+  // return `intent://klipwallet/open?url=https://klipwallet.com/?target=/a2a?request_key=${request_key}#Intent;scheme=kakaotalk;package=com.kakao.talk;end`
 }
 
 export const listingCard = async (
@@ -74,7 +74,7 @@ export const executeContract = (
       const { request_key } = response.data;
 
       if (isMobile) {
-        getKlipAccessUrl("android", request_key);
+        window.location.href = getKlipAccessUrl("android", request_key);
       } else {
         setQrvalue(getKlipAccessUrl("QR", request_key));
       }
@@ -144,7 +144,7 @@ export const getAddress = (setQrvalue, callback) => {
       const { request_key } = response.data;
 
       if (isMobile) {
-        getKlipAccessUrl("android", request_key);
+        window.location.href = getKlipAccessUrl("android", request_key);
       } else {
         setQrvalue(getKlipAccessUrl("QR", request_key));
       }
